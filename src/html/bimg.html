@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>bimg.html</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bimg.css" />
+    <link rel="stylesheet" type="text/css" href="../css/head.css" />
+    <script src="../lib/jquery-3.2.1.js"></script>
+    <script src="../js/bimg.js"></script>
+    <link rel="stylesheet" type="text/css" href="../lib/zoom/css/style.css">
+    <style type="text/css">
+        #etalage{
+            margin-left: 230px;
+            height: 508px;
+            width: 412px;
+            border: 1px solid #ccc;;
+        }
+        .active{
+            position: absolute;
+            left: 50%;
+            top: 176px;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+        #mt{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+    <body>
+        <header id="head"></header>
+        <div id="mt">
+            
+            <img src="../img/return.png" alt="" class="active"/>
+            <ul id="etalage">
+                        <li>
+                            <img class="etalage_thumb_image" src="../img/t03.png" id="mini"/>
+                            <img class="etalage_big_image" src="../img/t03.png" id="big"/>
+                        </li>
+                        <li>
+                            <img class="etalage_thumb_image" src="../img/bimg02.jpg"/>
+                            <img class="etalage_big_image" src="../img/bimg02.jpg"/>
+                        </li>
+                        <li>
+                            <img class="etalage_thumb_image" src="../img/bimg03.jpg"/>
+                            <img class="etalage_big_image" src="../img/bimg03.jpg"/>
+                        </li>
+                        <li>
+                            <img class="etalage_thumb_image" src="../img/bimg04.jpg"/>
+                            <img class="etalage_big_image" src="../img/bimg04.jpg"/>
+                        </li>
+                        <li>
+                            <img class="etalage_thumb_image" src="../img/bimg05.jpg"/>
+                            <img class="etalage_big_image" src="../img/bimg05.jpg"/>
+                        </li>
+            </ul>
+        </div>
+                <script src="../lib/zoom/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+                <script type="text/javascript" src="../lib/zoom/js/jqzoom.js"></script>
+                <script type="text/javascript">
+
+                var id=location.search;
+                var num=id.indexOf('=');
+                var id=id.slice(num+1);
+
+                $.ajax({
+                    type:'get',
+                    url:'../api/goodlist.php',
+                    data:{'id':id},
+                    success:function(res){
+                        res=JSON.parse(res)
+                        console.log(res[0].img);
+
+                        var mini=document.querySelector('#mini');
+                        mini.src=res[0].img;
+                        var big=document.querySelector('#big');
+                        big.src=res[0].img;
+                        console.log(big)
+                        $("#etalage").zoom({
+                            zoom_area_width: 300,
+                            autoplay_interval :3000,
+                            small_thumbs : 5,
+                            autoplay : true
+                        });
+                    }
+
+                });
+                </script>
+    </body>
+</html>

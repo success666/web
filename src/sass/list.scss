@@ -1,0 +1,38 @@
+@import 'head';
+@import 'foot';
+
+#good{
+    position: relative;padding-top: 30px;
+
+  ul{
+    width: 1260px;
+    height: 1600px;
+  }
+  li:hover{
+    border: 1px solid #E93B78;
+  }
+  #goods li {
+    float: left;margin: 8px;border: 1px solid #ccc;width: 590px;
+    img {
+      float: left;
+    }
+    div {
+      background: "#ccc";float: left;width: 228px;height: 300px;text-align: center;
+      p {
+        line-height: 60px;
+      }
+      button {
+        height: 40px;width: 100px;margin-top: 20px;background: #E93B78;
+      }
+    }
+  }
+}
+.page{
+    position: absolute;right: 150px;top: 10px;
+}
+.spanpage{
+    display: inline-block;height: 20px;width: 20px;margin: 0 8px;border-radius:50%;text-align: center;line-height: 20px;background: #ccc;
+}
+.spanpage:first-child{
+    background: red;
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>index</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <script src="../lib/jquery-3.2.1.js"></script>
+    <script src="../js/head.js"></script>
+    <style type="text/css">
+        *{padding: 0;margin: 0;box-sizing:border-box;}
+        .banner{overflow: hidden;height: 410px;position: relative;margin: 0 auto;position: relative;}
+        .banUl{position: absolute;top: 0;left: 0;}
+        .banUl li{list-style:none;float: left;}
+        .banUl li img{height: 410px;float: left;}
+        .banner .banUl p{position: absolute;z-index:100;bottom: 0;left: 50%;margin-left: -47px;}
+        .banner .banUl p span{display: inline-block;height: 20px;width: 20px;background: #fff;border-radius:50%;line-height: 20px;text-align: center;}
+        .active{position: absolute;bottom: 0;left: 50%;margin-left: -40px;z-index:100;}
+        .active span{display: inline-block;height: 20px;width: 20px;border-radius:50%;background: #fff;line-height: 20px;text-align: center;}
+        .ty{
+            position: fixed;
+            right: 0;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script src="../common.js"></script>
+    <script type="text/javascript">
+        jQuery(function($){
+            $('#head').load('./head.html');
+            $('#foot').load('./foot.html');
+
+            $(window).on('scroll',function(){
+                var y=window.scrollY;
+                if(y>=30){
+                    var $search=$('#search')
+                    $search.addClass('ty');
+                console.log($search);
+
+                }else{
+                    var $search=$('#search')
+                    $search.removeClass('ty');
+                }
+            })
+
+            var $goods=$('#goods')
+            $.ajax({
+                type:'get',
+                url:'../json/goods.json',
+                success:function(res){
+                    $goods.html(res.map(function(item){
+                        return `
+                            <li>
+                                <img src="${item.img}" alt="">
+                                <div>
+                                    <p>${item.name}</p>
+                                    <p>${item.title}</p>
+                                    <p>${item.result}</p>
+                                    <button>${item.btn}</button>
+                                </div>
+                            </li>
+                                `
+                    }).join(''));
+                }
+            })
+            
+
+            var $sale=$('#sale');
+            $.ajax({
+                type:'get',
+                url:'../json/shopping.json',
+                success:function(res){
+                    $sale.html(res.map(function(item){
+                        return `
+                            <li>
+                                <img src="${item.img}" alt="">
+                                <div>
+                                    <p>${item.content}</p>
+                                    <p>${item.title}</p>
+                                    <p><span>${item.sell}</span><span>${item.outsell}</span></p>
+                                    <p>${item.sellnum}</p>
+                                    <button>${item.btn}</button>
+                                </div>
+                            </li>
+                                `
+                    }).join(''));
+                }
+            })
+
+
+            var $banner=$('.banner');
+            var $ul=$banner.find('.banUl');
+            var $lis=$banner.find('li');
+            var $len=$lis.children().length;
+            var $width=$banner.outerWidth();
+
+            $banner.css({
+                width:$(window).width(),
+                height:425,
+                position:'relative',
+                overflow:'hidden'
+            });
+
+            $ul.css({
+                height:'100%',
+                width:$width*$len,
+                position:'absolute'
+            })
+
+            $lis.css({
+                height:'100%',
+                width:$width,
+                position:'relative',
+                float:'left'
+            })
+
+            $ul.find('img').css({
+                height: 425,
+                width: $width,
+                backgroundPosition: '100% 100%'
+            })
+
+            var $p=$('<p/>');
+            for(var i=0;i<$len;i++){
+                var $span=$('<span/>');
+                $span.html(i+1);
+                $span.css({
+                    display:'inline-block',
+                    width:18,
+                    height:18,
+                    lineHeight:'18px',
+                    textAlign:'center',
+                    background:'#fff',
+                    berder:'1 solid #ccc',
+                    borderRadius:'50%'
+                })
+
+                $span.appendTo($p);
+            }
+            
+
+            $('#good').on('click','li',function(){
+                location.href='../html/list.html';
+            })
+
+            $('#sale').on('click','li',function(){
+                location.href='../html/goods.html';
+            })
+
+
+        let box=document.querySelector('.banner');
+        let UL=box.querySelector('.banUl');
+
+        animationSlide(box,UL);
+
+        function animationSlide(div,ul){
+            
+            var imgWidht=window.innerWidth;
+            console.log()
+            $(box).css({
+                width:imgWidht
+            })
+
+            $(box).find('img').css({
+                width:imgWidht
+            })
+            
+            var length=ul.children.length;
+
+            ul.style.width=imgWidht*length+'px';
+            var idx=0;
+            var timer;
+            var animationTimer;
+
+
+            var p=document.createElement('p');
+            p.className='active';
+            for(var i=0;i<length;i++){
+                var span=document.createElement('span');
+                span.innerText=i+1;
+                p.appendChild(span);
+            }
+
+            box.appendChild(p);
+            p.children[0].style.background='green';
+
+            box.onclick=function(e){
+                e=e||window.event;
+                var target=e.target||srcElement;
+                if(target.className=='prev'){
+                    idx++;
+                    showimg();
+                }else if(target.className=='next'){
+                    idx--;
+                    showimg();
+                }else if(target.tagName.toLowerCase()==='span'){
+                    idx=target.innerText-1;
+                    showimg();
+                }
+            }
+
+            timer=setInterval(autoplay,3000);
+
+            function autoplay(){
+                idx++
+                showimg();
+            }
+
+            function showimg(){
+                if(idx>=length){
+                    idx=0;
+                }else if(idx<0){
+                    idx=0;
+                }
+
+                var target=-idx*imgWidht;
+                clearInterval(animationTimer)
+
+                animationTimer=setInterval(function(){
+                    var current=ul.offsetLeft;
+
+                    var speed=(target-current)/10;
+                    speed=speed>0? Math.ceil(speed) : Math.floor(speed);
+                    current+=speed;
+
+                    if(current==target){
+                        clearInterval(animationTimer)
+                        current=target;
+                    }
+                    ul.style.left=current+'px';
+
+                    for(var j=0;j<length;j++){
+                        p.children[j].style.background='#fff';
+                    }
+                    p.children[idx].style.background='green';
+
+                },50);
+            }
+
+            box.onmouseenter=function(){
+                clearInterval(timer);
+            }
+            box.onmouseleave=function(){
+                timer=setInterval(autoplay,2000);
+            }
+        }
+
+
+        });
+    </script>
+</head>
+    <body>
+        <header id="head"></header>
+        <div class="banner">
+            <ul class="banUl">
+                <li><img src="../img/banner01.jpg" alt="" /></li>
+                <li><img src="../img/banner02.jpg" alt="" /></li>
+                <li><img src="../img/banner03.jpg" alt="" /></li>
+                <li><img src="../img/banner04.jpg" alt="" /></li>
+            </ul>
+        </div>
+
+        <div id="good">
+            <ul id="goods">
+            </ul>
+        </div>
+
+        <img src="../img/temai.png" height="116" width="1354" alt="" />
+
+        <ul id="sale">
+        </ul>
+
+        <footer id="foot"></footer>
+    </body>
+</html>
+

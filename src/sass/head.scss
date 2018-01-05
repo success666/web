@@ -1,0 +1,138 @@
+.title{
+    width: 100%;
+}
+
+#nav{
+    height: 30px;line-height: 30px;background: #F2F2F2;
+    .logo{
+        height: 30px;width: 99px;margin-right: 4px;background:url("../img/logo.png") no-repeat;float: left;text-indent:-1000px;
+
+    }
+    ul li{
+        float: left;padding: 0 12px;position: relative;
+        div.height{
+            position: absolute;background: #ccc;left: 0px;top: 30px;z-index:20000;text-align: center;width: 110px;overflow: hidden;height: 0px;
+        }
+        div.car{
+            position: absolute;background: #ccc;width: 300px;text-align: center;top: 29px;display: none;left: -199px;z-index:1000;border: 1px solid #ccc;
+        }
+        img.weibo01,
+        img.weixin01{
+            position: absolute;display: none;width: 80px;height: 80px;
+        }
+        img.weibo:hover+img.weibo01{
+            display: block;
+        }
+        img.weixin:hover+img.weixin01{
+            display: block;
+        }
+
+    }
+
+    div.side{
+        box-sizing:border-box;padding-top: 90px;width: 40px;height: 600px;background: #000;position: fixed;z-index:30000000;right: 0px;color:#fff;z-index:1000;
+        p:hover{
+            background: #FA3778;
+        }
+        p.top{
+            display: none;
+        }
+        p{
+            text-align: center; position: relative;
+        }
+        div.shopping:hover{
+            background: #FA3778;
+        }
+        p.icon-guanjiaowangtubiao11{
+            margin-top: 170px;
+        }
+        div.shoppingcart{
+            border: 1px solid #000;position: fixed;width: 360px;height: 100%;background: #fff;display: none;right: 40px;padding: 0 8px;top: -1px;color: #000;
+            div:first-child{
+                height: 60px;line-height: 60px;border-bottom: 1px solid #ccc;
+            }
+            div h2{
+                font-size: 20px;
+            }
+            button{
+                display: inline-block;height: 16px;width: 16px;border-radius:50%;text-align: center;border: 1px solid #000;margin-top: 20px;
+            }
+        }
+    }
+}
+
+
+
+#search{
+    height: 96px;background: #fff;
+    img{
+        height: 96px;width: 400px;float: left;
+    }
+    p{
+        display: inline-block;margin-top: 8px;height: 38px;width: 500px;
+    }
+    input{
+        width: 340px;height: 38px;float: left;padding-left: 14px;box-sizing:border-box;  border: 2px solid #EC3E7D;
+    }
+    button{
+        height: 38px;width: 100px;float: left;background: #EC3E7D;
+    }
+    ul{
+        height: 40px;margin-top: 8px;
+        li{
+            float: left;
+            a span{
+                border-right:1px solid #ccc;padding: 0 14px;
+            }
+            a span:last-child{
+                border:0 none;
+            }
+        }
+    }
+}
+
+#classify{
+    position: relative;z-index:200;height: 40px;background: #ccc;line-height: 40px;
+    ul{
+        position: absolute;top: 0;right: 340px;    
+    }
+    ul.hot li{
+        float: left;font-size: 18px;padding: 0 16px;
+    }
+    ul.hot li:hover{
+        background: #FA3778;
+    }
+    ul.all{
+        position: absolute;top: 0;left: 0;box-sizing:border-box;height: 465px;width: 200px;border: 1px solid #ccc;
+        h2{
+            width: 200px;height: 40px;text-align: center;line-height: 40px;background: #000;
+        }
+        li.first{
+            width: 200px;position: relative;height: 53px;line-height: 52px;text-align: center;border-bottom: 1px dashed #ccc;background: #FA3778;
+        }
+        li.first ul li{
+            padding-left: 10px;background: #fff;
+        }
+        li.first:hover ul.face{
+            display: block;
+        }
+        li.first ul.face{
+            width: 400px;position: absolute;border: 1px solid #FA3778;text-align: left;left: 200px;top: 0;display: none;
+            ul.face li.one{
+                font-weight: bold;font-size: 16px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+#foot {
+  height: 400px;
+  margin-top: 60px;
+  background: #fff;
+}
+
+#foot img.com {
+  float: left;
+}
+
+#foot ul {
+  height: 40px;
+  padding-top: 14px;
+  padding-left: 40px;
+  background: #000;
+}
+
+#foot ul li {
+  float: left;
+}
+
+#foot ul li span {
+  color: #fff;
+  border-right: 1px solid #ccc;
+  padding: 0 16px;
+}
+
+#foot p {
+  line-height: 30px;
+  background: #000;
+  color: #fff;
+  padding-left: 58px;
+  padding-bottom: 20px;
+}
+
+#foot dl {
+  float: left;
+  padding: 24px 46px;
+}
+
+#foot dl dt {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#foot dl dd {
+  line-height: 28px;
+}

@@ -1,0 +1,64 @@
+@import 'head';
+
+.goodslist{
+    height: 600px;width: 100%;
+    .img{
+        height: 100%;width: 600px;border: 1px solid #585858;
+    }
+}
+
+#sale{
+
+    .sell{
+        color: red;margin:0 60px;
+    }
+    .outprice{
+        text-decoration: line-through;
+    }
+    button#btn{
+        height: 40px;width: 200px;background: #E93B78;margin-left: 214px;
+    }
+    button{
+        height: 30px;width: 30px;margin: 0 14px;
+    }
+}
+#role{
+    padding-left: 120px;
+    span{
+        font-size: 16px;margin: 0 8px;padding: 4px 6px;border: 1px solid #000;border-radius:12px;
+    }
+}
+.img{
+    position: relative;
+    .prev,.next{
+        position: absolute;bottom: 75px;z-index:100;height: 80px;width: 22px;text-align: center;line-height: 80px;background: #ccc;opacity: 0.4;font-size: 40px;
+    }
+    .prev{
+        left: 0px;
+    }
+    .next{
+        right: 0px;
+    }
+}
+.active{
+    width: 600px;height: 340px;
+}
+.good{
+    position: absolute;top: 350px;left: 0px;
+}
+.zoom{
+    position: absolute;top: 350px;right: 40px;
+}
+.after{
+    height: 168px;width: 150px;position: absolute;background: #fff;top: 400px;left: 601px;z-index:200000;
+}
+
+.carimg{
+    height: 120px;width: 120px;
+}
+.position{
+    position: absolute;top: 0px;right: 16px;
+}
+.gocar{
+    background: #E93B78;height: 30px;width: 80px;border-radius:10px;
+}

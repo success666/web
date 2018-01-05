@@ -1,0 +1,20 @@
+@import 'head';
+@import 'foot';
+#sale li {
+  width: 100%;height: 360px;background: #fff;border: 8px solid #ccc;margin: 8px;
+  img {
+    float: left;height: 360px;
+  }
+  div {
+    padding: 8px;height: 342px;width: 568px;float: left;background: #fff;
+    p {
+      line-height: 40px;font-size: 26px;
+    }
+    button {
+      height: 30px;width: 100px;background: "#E93B78";
+    }
+  }
+}
+
+
+

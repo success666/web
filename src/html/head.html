@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>head</title>
+    <link rel="stylesheet" type="text/css" href="../css/head.css" />
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <script src="../lib/jquery-3.2.1.js"></script>
+    <script src="../js/head.js"></script>
+    <script src="../common.js"></script>
+</head>
+    <body>
+        <div class="container">
+            <!-- nav -->
+            <div id="nav">
+                <h1 class="logo">shasha 莎莎</h1>
+                <a href="enter.html">登录</a>
+                <span>或</span>
+                <a href="enroll.html">免费注册</a>
+                <ul class="fr">
+                    <li class="my">
+                        <i class="iconfont icon-wode"></i>
+                        <a href="#">我的账号</a>
+                        <span class="iconfont icon-fangxiangxia"></span>
+                        <div class="height">
+                            <p>我的订单</p>
+                            <p>我的优惠券</p>
+                            <p>我的积分</p>
+                            <p>我的收藏</p>
+                            <p>我的评价</p>
+                        </div>
+                    </li>
+                    <li class="buycar">
+                        <i class="iconfont icon-gouwuche"></i>
+                        <a href="#">我的购物车</a>
+                        <div class="car">
+                            <p>购物车中还没有商品,</p>
+                            <p>快去挑选心爱的商品吧</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="iconfont icon-xin"></i>
+                        <a href="#">我的收藏</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        <a href="#">我的站内信</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        <a href="#">积分中心</a>
+                    </li>
+                    <li>
+                        <a href="#">Global site</a>
+                    </li>
+                    <li>
+                        <a href="#">关注我们</a>
+                        <img src="../img/weibo.png" alt="" class="weibo"/>
+                        <img src="../img/weibo01.jpg" alt="" class="weibo01"/>
+                        <img src="../img/weixin.png" alt="" class="weixin"/>
+                        <img src="../img/weinxin01.jpg" alt="" class="weixin01"/>
+                    </li>
+                </ul>
+                <div class="side">
+                    <p class="iconfont icon-wode"></p>
+                    <div class="shopping">
+                        <p class="iconfont icon-gouwuche"></p>
+                        <p>购</p>
+                        <p>物</p>
+                        <p>车</p>
+                        <p class="num">0</p>
+                    </div>
+                    <div class="shoppingcart">
+                        <div>
+                            <h2 class="fl">购物车</h2><button class="fr btn">x</button>
+                        </div>
+                        <span class="removespan">购物车中还没有商品，赶紧选购吧!</span>
+                        <div id="buycar"></div>
+                    </div>
+                    <p class="iconfont icon-xin"></p>
+                    <p class="iconfont icon-xiaofeijilu-copy"></p>
+                    <p id="top">Top</p>
+                    <p class="iconfont icon-guanjiaowangtubiao11"></p>
+                    <p class="iconfont icon-weixin"></p>
+                </div>
+            </div>
+            <!-- nav -->
+            
+            <!-- search -->
+            <div id="search">
+                <img src="../img/shasha.png" alt="" />
+                <p>
+                    <input type="text" placeholder="雅诗兰黛"/>
+                    <button>搜索</button>
+                </p>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span>精华</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>保显</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>面霜</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>眼霜</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>资生堂</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>保水</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>瑞士葆丽美</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- search -->
+
+            <div id="classify"> 
+                <ul class="all">
+                    <h2>全部分类</h2>
+                    <li class="first">
+                        <i></i>
+                        <a href="#">面部护理</a>
+                        <i></i>
+                        <ul class="face">
+                            <li class="one">
+                                <span>洁面/磨砂</span>
+                            </li>
+                            <li>
+                                <span>泡沫洁面乳</span>
+                                <span>洁面摩丝</span>
+                                <span>洁面啫喱</span>
+                                <span>洁面奶</span>
+                                <span>洁面皂</span>
+                                <span>洁面粉</span>
+                                <span>磨砂膏</span>
+                                <span>磨砂啫喱</span>
+                            </li>
+                            <li class="one">
+                                <span>眼部/唇部/颈部护理</span>
+                            </li>
+                            <li>
+                                <span>眼霜</span>
+                                <span>眼胶</span>
+                                <span>眼膜</span>
+                                <span>润唇膏</span>
+                                <span>唇部精化</span>
+                                <span>唇膜</span>
+                                <span>唇部磨砂</span>
+                                <span>颈霜</span>
+                                <span>颈精华</span>
+                                <span>颈膜</span>
+                            </li>
+                            <li class="one">
+                                <span>面膜</span>
+                            </li>
+                            <li>
+                                <span>面膜贴</span>
+                                <span>水洗式面膜</span>
+                                <span>睡眠面膜</span>
+                                <span>面膜粉</span>
+                                <span>面膜泥</span>
+                            </li>
+                            <li class="one">
+                                <span>防晒护理</span>
+                            </li>
+                            <li>
+                                <span>防晒乳液</span>
+                                <span>防晒啫喱</span>
+                                <span>防晒喷雾</span>
+                                <span>防晒膏</span>
+                                <span>晒后护理</span>
+                                <span>晒黑用品</span>
+                                <span>防晒伞</span>
+                            </li>
+                            <li class="one">
+                                <span>暗疮护理</span>
+                            </li>
+                            <li>
+                                <span> 暗疮精华</span>
+                                <span>暗疮膏</span>
+                                <span>黑头导出液/膏</span>
+                                <span>撕拉式鼻贴/鼻膜</span>
+                                <span>暗疮针</span>
+                            </li>
+                            <li class="one">
+                                <span>精华/化妆水</span>
+                            </li>
+                            <li>
+                                <span>精华液</span>
+                                <span>精华素/疗程</span>
+                                <span>柔肤水</span>
+                                <span>精华水</span>
+                                <span>爽肤水</span>
+                                <span>紧肤水</span>
+                                <span>保湿喷雾</span>
+                            </li>
+                            <li class="one">
+                                <span>卸妆</span>
+                            </li>
+                            <li>
+                                <span>卸妆油</span>
+                                <span>眼/唇专用卸妆液</span>
+                                <span>卸妆水</span>
+                                <span>卸妆乳</span>
+                                <span>卸妆啫喱</span>
+                                <span>卸妆纸巾</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="first">
+                        <i></i>
+                        <a href="#">彩妆</a>
+                        <i></i>
+                        <ul class="face">
+                            <li class="one">
+                                <span>精华/化妆水</span>
+                            </li>
+                            <li>
+                                <span>精华液</span>
+                                <span>精华素/疗程</span>
+                                <span>柔肤水</span>
+                                <span>精华水</span>
+                                <span>爽肤水</span>
+                                <span>紧肤水</span>
+                                <span>保湿喷雾</span>
+                            </li>
+                            <li class="one">
+                                <span>卸妆</span>
+                            </li>
+                            <li>
+                                <span>卸妆油</span>
+                                <span>眼/唇专用卸妆液</span>
+                                <span>卸妆水</span>
+                                <span>卸妆乳</span>
+                                <span>卸妆啫喱</span>
+                                <span>卸妆纸巾</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="first">
+                        <i></i>
+                        <a href="#">香水</a>
+                        <i></i>
+                        <ul class="face">
+                            <li class="one">
+                                <span>精华/化妆水</span>
+                            </li>
+                            <li>
+                                <span>精华液</span>
+                                <span>精华素/疗程</span>
+                                <span>柔肤水</span>
+                                <span>精华水</span>
+                                <span>爽肤水</span>
+                                <span>紧肤水</span>
+                                <span>保湿喷雾</span>
+                            </li>
+                            <li class="one">
+                                <span>卸妆</span>
+                            </li>
+                            <li>
+                                <span>卸妆油</span>
+                                <span>眼/唇专用卸妆液</span>
+                                <span>卸妆水</span>
+                                <span>卸妆乳</span>
+                                <span>卸妆啫喱</span>
+                                <span>卸妆纸巾</span>
+                            </li>
+                            <li class="one">
+                                <span>精华/化妆水</span>
+                            </li>
+                            <li>
+                                <span>精华液</span>
+                                <span>精华素/疗程</span>
+                                <span>柔肤水</span>
+                                <span>精华水</span>
+                                <span>爽肤水</span>
+                                <span>紧肤水</span>
+                                <span>保湿喷雾</span>
+                            </li>
+                            <li class="one">
+                                <span>卸妆</span>
+                            </li>
+                            <li>
+                                <span>卸妆油</span>
+                                <span>眼/唇专用卸妆液</span>
+                                <span>卸妆水</span>
+                                <span>卸妆乳</span>
+                                <span>卸妆啫喱</span>
+                                <span>卸妆纸巾</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="first">
+                        <i></i>
+                        <a href="#">健康美肌</a>
+                        <i></i>
+                        <ul class="face">
+                            <li class="one">
+                                <span>卸妆</span>
+                            </li>
+                            <li>
+                                <span>卸妆油</span>
+                                <span>眼/唇专用卸妆液</span>
+                                <span>卸妆水</span>
+                                <span>卸妆乳</span>
+                                <span>卸妆啫喱</span>
+                                <span>卸妆纸巾</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="first">
+                        <i></i>
+                        <a href="#">纤体美胸</a>
+                        <i></i>
+                        <ul class="face">
+                            <li class="one">
+                                <span>精华/化妆水</span>
+                            </li>
+                            <li>
+                                <span>精华液</span>
+                                <span>精华素/疗程</span>
+                                <span>柔肤水</span>
+                                <span>精华水</span>
+                                <span>爽肤水</span>
+                                <span>紧肤水</span>
+                                <span>保湿喷雾</span>
+                            </li>
+                            <li class="one">
+                                <span>卸妆</span>
+                            </li>
+                            <li>
+                                <span>卸妆油</span>
+                                <span>眼/唇专用卸妆液</span>
+                                <span>卸妆水</span>
+                                <span>卸妆乳</span>
+                                <span>卸妆啫喱</span>
+                                <span>卸妆纸巾</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="first">
+                        <i></i>
+                        <a href="#">个人护理</a>
+                        <i></i>
+                        <ul class="face">
+                            <li class="one">
+                                <span>精华/化妆水</span>
+                            </li>
+                            <li>
+                                <span>精华液</span>
+                                <span>精华素/疗程</span>
+                                <span>柔肤水</span>
+                                <span>精华水</span>
+                                <span>爽肤水</span>
+                                <span>紧肤水</span>
+                                <span>保湿喷雾</span>
+                            </li>
+                            <li class="one">
+                                <span>卸妆</span>
+                            </li>
+                            <li>
+                                <span>卸妆油</span>
+                                <span>眼/唇专用卸妆液</span>
+                                <span>卸妆水</span>
+                                <span>卸妆乳</span>
+                                <span>卸妆啫喱</span>
+                                <span>卸妆纸巾</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="first">
+                        <i></i>
+                        <a href="#">男士护理</a>
+                        <i></i>
+                        <ul class="face">
+                            <li class="one">
+                                <span>精华/化妆水</span>
+                            </li>
+                            <li>
+                                <span>精华液</span>
+                                <span>精华素/疗程</span>
+                                <span>柔肤水</span>
+                                <span>精华水</span>
+                                <span>爽肤水</span>
+                                <span>紧肤水</span>
+                                <span>保湿喷雾</span>
+                            </li>
+                            <li class="one">
+                                <span>卸妆</span>
+                            </li>
+                            <li>
+                                <span>卸妆油</span>
+                                <span>眼/唇专用卸妆液</span>
+                                <span>卸妆水</span>
+                                <span>卸妆乳</span>
+                                <span>卸妆啫喱</span>
+                                <span>卸妆纸巾</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="first">
+                        <i></i>
+                        <a href="#">孕婴护理</a>
+                        <i></i>
+                        <ul class="face">
+                            <li class="one">
+                                <span>精华/化妆水</span>
+                            </li>
+                            <li>
+                                <span>精华液</span>
+                                <span>精华素/疗程</span>
+                                <span>柔肤水</span>
+                                <span>精华水</span>
+                                <span>爽肤水</span>
+                                <span>紧肤水</span>
+                                <span>保湿喷雾</span>
+                            </li>
+                            <li class="one">
+                                <span>卸妆</span>
+                            </li>
+                            <li>
+                                <span>卸妆油</span>
+                                <span>眼/唇专用卸妆液</span>
+                                <span>卸妆水</span>
+                                <span>卸妆乳</span>
+                                <span>卸妆啫喱</span>
+                                <span>卸妆纸巾</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="hot fl">
+                    <li>
+                        <a href="#">清仓特卖</a>
+                    </li>
+                    <li>
+                        <a href="#">面部护肤</a>
+                    </li>
+                    <li>
+                        <a href="#">彩妆</a>
+                    </li>
+                    <li>
+                        <a href="#">限时特卖</a>
+                    </li>
+                    <li>
+                        <a href="#">贵宾专区</a>
+                    </li>
+                    <li>
+                        <a href="#">闪电保锐专区</a>
+                    </li>
+                    <li>
+                        <a href="#">所有品牌</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
+

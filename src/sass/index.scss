@@ -1,0 +1,108 @@
+
+$borderColor:'#ccc';
+$mainColor:'#E93B78';
+
+
+@import 'head';
+@import 'foot';
+
+
+html{
+    height: 100%;
+    body{
+        height: 100%;
+        background: #F2F2F2;
+    }
+}
+
+// .banner{
+//     height: 425px;width: 100%;
+//     position: relative
+//     ul{width: 100%;
+//         li{
+//             height: 425px;
+//             width: 100%;
+//             float: left;
+//             img{
+//                 height: 425px;
+//                 width: 100%;
+//                 background-position: 100% 100%;
+//             }
+//         }
+//     }
+// }
+
+#good{
+    ul{
+        width: 1260px;height: 1600px;
+    }
+    #goods{
+        li{
+            float: left;
+            margin: 8px;
+            border: 1px solid $borderColor;
+            width:590px;
+            overflow: hidden;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            img{
+                flex:1;
+
+            }
+            div{
+                background: $borderColor;
+                flex:1;
+                width: 228px;
+                height: 300px;
+                text-align: center;
+                p{
+                    line-height: 60px;
+                }
+                button{
+                    height: 40px;
+                    width: 100px;
+                    margin-top: 20px;
+                    background: $mainColor;
+                }
+            }
+        }
+    }
+}
+
+
+#sale{
+    width: 1263px;
+    height: 3672px;
+    li{
+        width: 100%;
+        height: 360px;
+        background: #fff;
+        border:8px solid $borderColor;
+        margin: 8px;
+        img{
+            float: left;
+            width: 560px;
+            height: 360px;
+        }
+        div{
+            padding: 8px;
+            height: 342px;
+            width: 568px;
+            float: left;
+            background: #fff;
+            p{
+                line-height: 40px;
+                font-size: 26px;
+
+            }
+            button{
+                height: 30px;
+                width: 100px;
+                background: $mainColor;
+            }
+        }
+    }
+}

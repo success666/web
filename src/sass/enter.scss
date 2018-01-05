@@ -1,0 +1,48 @@
+@import 'head';
+@import 'foot';
+.enroll{
+    height: 560px;margin-top: 40px;margin-bottom: 60px;padding-bottom: 2px;overflow: hidden;
+    img.pd{
+        margin-left: 114px;float: left;margin-top: 106px;
+    }
+    .data{
+        float: left;width: 430px;height: 100%;border: 1px solid #ccc;box-shadow:1px 1px 1px #ccc,-1px -1px 1px 1px #ccc;
+    }
+        ul li:first-child{
+            padding-left: 0;
+        }
+        ul li{
+            padding-left: 34px;margin-top: 32px;height: 40px;position: relative;
+            h2{
+                float: left;font-size: 20px;
+            }
+            p{
+                float: right;
+            }
+            span.user{
+                position: absolute;top: 51px;left: 36px;
+            }
+            span.code{
+                display: inline-block;height: 42px;width: 100px;background: #ccc;text-align: center;line-height: 42px;margin-top: 10px;
+            }
+            input.init{
+                height: 40px;width: 360px;border: 1px solid #ccc;margin-top: 8px;
+            }
+            input.number{
+                height: 40px;width: 150px;border: 1px solid #ccc;margin-top: 10px;float: left;
+            }
+            button{
+                height: 40px;width: 100px;
+            }
+        }
+}
+
+
+
+
+
+
+
+
+
+

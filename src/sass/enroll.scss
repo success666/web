@@ -1,0 +1,47 @@
+@import 'head';
+.enroll{
+    height: 560px;margin-top: 40px;margin-bottom: 60px;padding-bottom: 2px;overflow: hidden;
+    img.pd{
+        margin-left: 114px;float: left;margin-top: 106px;
+    }
+    .data{
+        float: left;width: 430px;height: 100%;border: 1px solid #ccc;box-shadow:1px 1px 1px #ccc,-1px -1px 1px 1px #ccc;
+        ul li:first-child{
+            padding-left: 0;
+        }
+        ul li.jks{
+            line-height: 80px;
+        }
+        ul li{
+            padding-left: 34px;margin-top: 32px;height: 30px;position: relative;
+            h2{
+                float: left;font-size: 20px;
+            }
+            p{
+                float: right;
+            }
+            span.user{
+                position: absolute;top: 51px;left: 36px;
+            }
+            input.init{
+                height: 40px;width: 360px;border: 1px solid #ccc;margin-top: 8px;
+            }
+            input.number{
+                height: 40px;width: 150px;border: 1px solid #ccc;margin-top: 10px;float: left;
+            }
+            .code{
+                display: block;margin-top: 10px;height: 42px;width: 80px;text-align: center;line-height: 40px;background: #ccc;float: left;
+            }
+            .look{
+                float: left;margin-top: 21px;margin-left: 6px;
+            }
+            button{
+                height: 40px;width: 360px;background: #FA3778;
+            }
+        }
+    }
+}
+
+
+
+
