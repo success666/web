@@ -76,7 +76,7 @@ jQuery(function($){
                             alert('用户名或密码错误')
                         }
                         else if(data == 'ok'){
-                            location.href = 'http://localhost:3000/html/index';
+                            location.href = './html/index';
                         }
                     }
                 })
