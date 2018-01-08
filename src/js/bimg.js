@@ -30,7 +30,8 @@ jQuery(function($){
     });
 
 
+
     $('.active').on('click',function(){
-        location.href='./datalist.html?id='+id;
+        location.href='./goodlist.html?id='+id;
     })
 });

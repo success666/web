@@ -1,4 +1,6 @@
 jQuery(function($){
+
+    // 导入头部
     $('#head').load('./head.html',function(){
         $('.all li').css({
 
@@ -28,7 +30,7 @@ jQuery(function($){
         
     });
 
-
+    // 获取id
     var id=location.search;
     var num=id.indexOf('=');
     var id=id.slice(num+1);
@@ -38,11 +40,15 @@ jQuery(function($){
         float:'left'
 
     });
+    console.log(id)
+
+    // 请求数据
     $.ajax({
         type:'get',
         url:'../api/datalist.php',
         data:{'id':id},
         success:function(res){
+            console.log(res);
             var res=JSON.parse(res);
             var $bgdiv=$('<div/>').addClass('goodss');
             var $bigimg=$('<img/>');
@@ -50,10 +56,7 @@ jQuery(function($){
             $bgdiv.append($bigimg);
             $bgdiv.appendTo($imgarea);
 
-          
-
-
-
+            // 生成结构
             $bigimg.addClass('active');
             var imgUl=$('<ul/>')[0];
             imgUl.innerHTML=res[0].imgs.map(function(item){
@@ -64,7 +67,7 @@ jQuery(function($){
 
             $(imgUl).appendTo($imgarea);
 
-
+            // 添加样式
             $(imgUl).find('li').css({
                 float:'left',
                 height:140,
@@ -84,12 +87,10 @@ jQuery(function($){
                 position:'absolute',
                 left:0,
                 top:420,
-
-
             })
 
 
-
+            // 生成结构
             var $sale=$('#sale');
             $sale.html(res.map(function(item){
                 return `
@@ -104,6 +105,7 @@ jQuery(function($){
                         `
             }).join(''));
 
+            // 商品数量的加减
             $('#sub').on('click',function(){
                 var $num=$('#sub').next();
                 var $text=$num.html();
@@ -121,18 +123,21 @@ jQuery(function($){
                 $num.html($text);
             })
 
+
+
+            // 添加样式
             $sale.find('li').css({
                 padding:8,
                 height:585,
                 width:617,
                 float:'left'
             })
-
             $sale.find('p').css({
                 fontSize:30,
                 lineHeight:'80px'
             })
 
+            // 点击高亮
             $('#role').html(res[0].role.map(function(item){
                 return `<span>${item}</span>`;
             }).join('')).on('click','span',function(){
@@ -149,7 +154,7 @@ jQuery(function($){
 
 
 
-
+            // 小图左右轮播图
             var $prev=$('.prev');
             var $next=$('.next');
             var $left;
@@ -163,7 +168,6 @@ jQuery(function($){
                 })
             })
 
-
             $next.on('click',function(){
                 $left=$(imgUl).offset().left-1;
                 console.log($left);
@@ -175,9 +179,9 @@ jQuery(function($){
                 })
             })
 
+            // 图片的切换
             var lis=$(imgUl).find('li');
             var len=lis.length;
-
             $(imgUl).on('click','img',function(){
                 var src=$(this).attr('src');
                 $bigimg.attr({src:src,'data-big':src})
@@ -190,10 +194,13 @@ jQuery(function($){
             })
 
 
-
+            // 加入购物车
             var $number=$('#number')
             var idxs=0;
+            var $Numbers=$('.num');
             $('#btn').on('click',function(){
+
+
                 var $numbertext=$number.text();
                 var left=$bigimg.offset().left;
                 var top=$bigimg.offset().top;
@@ -212,7 +219,7 @@ jQuery(function($){
                     $buycar.find('span.removespan').remove();
                     var $car=$('#buycar');
 
-
+                    // 重复加入时数量加一
                     if(idxs==0){
                         var $carp=$('<p/>')
 
@@ -232,10 +239,15 @@ jQuery(function($){
                         $('#shulang').html(shu);
                     }
 
+                    // 购物车数量
+                    var numtext=$Numbers.html();
+                    numtext++;
+                    $Numbers.html(numtext); 
 
+
+                    // 头部购物车
                     var $carp=$('<p/>');
                     $carp.html(res.map(function(item){
-                        
                         return`
                     <img src="${item.img}" alt="" class="fl carimg">
                     <span>${item.name}</span><br>
@@ -266,7 +278,8 @@ jQuery(function($){
 
         }
     })
-
+    
+    // 点击跳转到放大镜页面
     $('.zoom').on('click',function(){
         location.href='../html/dataimg?id='+id;
     })

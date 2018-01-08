@@ -31,6 +31,6 @@ jQuery(function($){
    
 
     $('.active').on('click',function(){
-        location.href='./goodlist.html?id='+id;
+        location.href='./datalist.html?id='+id;
     })
 });

@@ -34,7 +34,7 @@
         p:hover{
             background: #FA3778;
         }
-        p.top{
+        p#top{
             display: none;
         }
         p{
@@ -105,7 +105,7 @@
     ul.all{
         position: absolute;top: 0;left: 0;box-sizing:border-box;height: 465px;width: 200px;border: 1px solid #ccc;
         h2{
-            width: 200px;height: 40px;text-align: center;line-height: 40px;background: #000;
+            width: 200px;height: 40px;text-align: center;line-height: 40px;background: #000;color: #fff;
         }
         li.first{
             width: 200px;position: relative;height: 53px;line-height: 52px;text-align: center;border-bottom: 1px dashed #ccc;background: #FA3778;
